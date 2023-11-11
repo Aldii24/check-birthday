@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Ur Birthday</title>
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- My Style -->
+    <style>
+        *,
+        html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin: 10px auto;
+            gap: 10px;
+            width: 500px;
+            padding: 45px;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        h1 span {
+            color: yellowgreen;
+        }
+
+        label {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #birthday {
+            padding: 16px;
+            border-radius: 8px;
+            background-color: yellowgreen;
+            font-size: 16px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .btn {
+            padding: 10px;
+            border-radius: 8px;
+            background-color: black;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: yellowgreen;
+            color: black;
+        }
+
+        p {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-top: 16px;
+            border: 1px solid yellowgreen;
+            border-radius: 4px;
+        }
+
+        .refresh-page {
+            width: 60px;
+            height: 30px;
+            position: absolute;
+            margin: 10px 350px;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .refresh-page:hover {
+            background-color: yellowgreen;
+            color: black;
+        }
+
+        h4 {
+            display: flex;
+            justify-content: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-top: 1rem;
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            gap: 1rem;
+        }
+
+        .socials a {
+            color: black;
+        }
+
+        .socials a:hover {
+            color: yellowgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <h1>Cek <span>Usia</span> Kamu</h1>
+        <label>Masukkan Tahun Kelahiran Kamu</label>
+        <input type="number" placeholder="contoh: 2003" id="birthday">
+
+        <button onclick="checkAge()" class="btn">Cek Usia</button>
+
+        <p id="resultView"></p>
+
+        <button onclick="refreshPage()" class="refresh-page">Refresh</button>
+
+        <h4>Hubungi Saya</h4>
+
+        <div class="socials">
+            <a href="https://www.instagram.com/allrvvnn/"><i data-feather="instagram"></i></a>
+            <a href="https://wa.me/6281372648563"><i data-feather="phone"></i></a>
+            <a href="https://www.facebook.com/aldi.irawan.311493"><i data-feather="facebook"></i></a>
+        </div>
+    </div>
+
+
+    <script>
+
+        // My Script
+        function checkAge() {
+            const birthdayInput = document.getElementById("birthday");
+            const birthday = birthdayInput.value;
+
+            const now = new Date().getFullYear();
+            const age = now - birthday;
+
+            resultView.innerHTML = "Usia kamu sekarang adalah: " + age
+        }
+
+        function refreshPage() {
+            location.reload()
+        }
+
+        // Feather Icons Script
+        feather.replace();
+
+    </script>
+
+</body>
+
+</html>
